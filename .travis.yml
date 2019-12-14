@@ -1,0 +1,10 @@
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t pjcubero/docker-react -f Dockerfile.dev .     
+
+script:
+    - docker run  pjcubero/docker-react npm run test -- --coverage     
+
